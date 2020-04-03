@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/car/car",
+    "pages/kind/kind",
+    "pages/address/address",
+    "pages/search/search"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "大大优先",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./static/images/首页2.png",
+        "selectedIconPath": "./static/images/首页1.png"
+      },
+      {
+        "pagePath": "pages/kind/kind",
+        "text": "分类",
+        "iconPath": "./static/images/分类2.png",
+        "selectedIconPath": "./static/images/分类1.png"
+      },
+      {
+        "pagePath": "pages/car/car",
+        "text": "购物车",
+        "iconPath": "./static/images/car2.png",
+        "selectedIconPath": "./static/images/car1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

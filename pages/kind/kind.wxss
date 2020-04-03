@@ -1,0 +1,16 @@
+.goods-list{
+  display: flex;
+  padding: 10px
+}
+.goods-list-r{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around
+}
+.goods-bottom{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}

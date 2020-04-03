@@ -1,0 +1,21 @@
+<view class='container'>
+    <view class="address">
+      <view wx:if='{{show}}'>
+        <van-collapse value="{{ activeNames }}" bind:change="onChange">
+        <van-collapse-item title="暂无收货地址，请点击选择电视" name="2" icon="location-o">
+        </van-collapse-item>
+      </van-collapse>
+      </view>
+      <view wx:else>
+      <view>
+        <van-collapse value="{{ activeNames }}" bind:change="onChange">
+        <van-collapse-item title="{{addresslist[0].address}}" name="2" icon="location-o">
+        </van-collapse-item>
+      </van-collapse>
+      </view>
+      </view>
+    </view>
+    <view class="carlist">
+      
+    </view>
+</view>

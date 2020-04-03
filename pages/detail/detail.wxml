@@ -1,0 +1,64 @@
+<view class="container">
+  <image src="{{currentGood.pro_img}}" style="width:100%"/>
+  <view class="goodsinfo">
+    <view class="goodsinfo-price">
+      ￥ {{currentGood.pro_price}}
+    </view>
+    <view class="goodsinfo-title">
+      {{currentGood.pro_title}}
+    </view>
+    <view class="line">
+      <van-divider contentPosition="center">继续拖动，查看商品详情</van-divider>
+    </view>
+    <view class="goodsinfo-detail">
+      <text>商品详情</text>
+      <view class="detailinfo">
+        {{currentGood.pro_detail}}
+      </view>
+    </view>
+  </view>
+
+    <van-goods-action>
+      <van-goods-action-icon
+        icon="chat-o"
+        text="客服"
+        bind:click="onClickIcon"
+      />
+      <van-goods-action-icon
+        icon="cart-o"
+        text="购物车"
+        bind:click="onClickIcon"
+      />
+      <van-goods-action-button
+        text="加入购物车"
+        type="warning"
+        bind:click="onClickButton"
+      />
+      <van-goods-action-button
+        text="立即购买"
+        bind:click="onClickButton"
+      />
+    </van-goods-action>
+    <van-popup
+      show="{{ show }}"
+      closeable
+      close-icon="close"
+      position="bottom"
+      custom-style="height: 55%;position:relavant"
+      bind:close="onClose"
+    >
+    <view class="popup" style="height:100%" >
+      <view class="popup-top" style="position:relavant">
+        <image src="{{currentGood.pro_img}}" style="width:100px;height:100px;position:absolute;left:10px;top:-15px;border:1px solid white" />
+        <view class="popup-price">￥ {{currentGood.pro_price}}</view>
+      </view>
+      <view class="popup-bottom">
+        <text>购买数量</text>
+        <van-stepper value="{{ 1 }}" bind:change="onChangenum" />
+      </view>
+      <view class="addcar" style="positon:absolute;bottom:0">
+        <button style="background-color:orange;color:white;position: absolute;width: 100%;bottom:0" bindtap="addtocar">加入购物车</button>
+      </view>
+    </view>
+    </van-popup>
+</view>

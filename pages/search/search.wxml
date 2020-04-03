@@ -1,0 +1,23 @@
+<van-search value="{{ value }}" shape="round" background="#4fc08d" placeholder="请输入搜索关键词" bind:search='searchdetail' />
+<view class="show" wx:if="{{show}}">
+  <block wx:for="{{searchlist}}" wx:key='index' wx:for-item='item' >
+    <view class="goods-list" bindtap="godetail" id="{{item.pro_id}}">
+      <image src="{{item.pro_img}}" style="width:80px;height:80px;padding-right:10px" />
+      <view class="goods-list-r">
+        <view class="title">{{item.pro_title}}</view>
+        <view class="price" style="color:orange">￥ {{item.pro_price}}</view>
+        <view class="goods-bottom">
+          <view class="salenum" style="color:#ccc">销量： {{item.pro_salenum}}</view>
+          <view class="addtocar">
+            <image src="../../static/images/car2.png" style="width:20px;height:20px" catchtap="Addtocar" id="{{item.pro_id}}" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="hide" wx:else>
+  <block>
+    没有相关商品，请重新输入
+  </block>
+</view>

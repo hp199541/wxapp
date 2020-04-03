@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<view class="container">
+    <swiper indicator-dots="{{indicatorDots}} "
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="width:100%">
+                <swiper-item wx:for='{{imgUrl}}' wx:key='index'>
+                  <image src="{{item}}" /> 
+                </swiper-item>
+    </swiper>
+    <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%" >
+          <view id="demo1" class="scroll-view-item_H demo-text-1" wx:for='{{typeData}}' style="width:25%" wx:key='index'>
+            <image src="{{item.imgurl}}" style="width:65px;height:65px"/>
+            <view>{{item.introduce}}</view>
+          </view>
+    </scroll-view>
+    <view class="tip">
+      <view class="tip-content">
+        <view class="marquee_text">周一到周五常规商品下单，正常配送!</view>
+      </view>
+    </view>
+    <view class="buy-way">
+      <view class="buy-all" style="width:47%">
+        <text>今日团品</text>
+        <image src="../../static/images/all.png" style="width:47%;height:100px"/>
+      </view>
+      <view class="onsale" style="width:47%">
+        <text>特价秒杀</text>
+        <image src="../../static/images/onsale.png" style="width:47%;height:100px" />
+      </view>
+    </view>
+    <view class="bottom">
+      <text style="display:block;height:50px;line-height:50px;padding-left:20px">下厨房</text>
+      <view class="search" bindtap="tosearch">
+        <input class="weui-input" auto-focus placeholder="请输入搜索内容" disabled/>
+      </view>
+    </view>
+    <view class="allgoods">
+      <view class="nav">
+        <text>综合</text>
+        <text>销量</text>
+        <text>取货</text>
+        <text>价格</text>
+        <text>筛选</text>
+      </view>
+      <block wx:for="{{goodsData}}" wx:key='index' wx:for-item='item'>
+        <view class="goods-list"  bindtap="godetail" id="{{item.pro_id}}">
+        <image src="{{item.pro_img}}" style="width:80px;height:80px;padding-right:10px"/>
+        <view class="goods-list-r">
+          <view class="title" >{{item.pro_title}}</view>
+          <view class="price" style="color:orange">￥ {{item.pro_price}}</view>
+          <view class="goods-bottom">
+            <view class="salenum" style="color:#ccc">销量： {{item.pro_salenum}}</view>
+            <view class="addtocar">
+              <image src="../../static/images/car2.png" style="width:20px;height:20px" catchtap="Addtocar" id="{{item.pro_id}}"/>
+            </view>
+          </view>
+        </view>
+      </view>
+      </block>
+      
+    </view>
+</view>

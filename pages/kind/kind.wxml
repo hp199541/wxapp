@@ -1,0 +1,41 @@
+<view class='container'>
+  <view class="search">
+    <van-search
+      value="{{ value }}"
+      shape="round"
+      background="#4fc08d"
+      placeholder="请输入搜索关键词"
+      disabled
+      bindtap='tosearch'
+    />
+  </view>
+  <view class="choosetype">
+    <van-tabs type="line" color="black"  border="false" swipe-threshold="5" bind:click="changetype">
+      <van-tab title="全部" id="1"></van-tab>
+      <van-tab title="干货类" id='2'></van-tab>
+      <van-tab title="生鲜类" id='3'></van-tab>
+      <van-tab title="面点类" id='4'></van-tab>
+      <van-tab title="零食类" id='5'></van-tab>
+    </van-tabs>
+  </view>
+  <view class="goodstype">
+
+  </view>
+  <view class="goodslist">
+    <block wx:for="{{goodslist}}" wx:key='index' wx:for-item='item'>
+        <view class="goods-list"  bindtap="godetail" id="{{item.pro_id}}">
+        <image src="{{item.pro_img}}" style="width:80px;height:80px;padding-right:10px"/>
+        <view class="goods-list-r">
+          <view class="title" >{{item.pro_title}}</view>
+          <view class="price" style="color:orange">￥ {{item.pro_price}}</view>
+          <view class="goods-bottom">
+            <view class="salenum" style="color:#ccc">销量： {{item.pro_salenum}}</view>
+            <view class="addtocar">
+              <image src="../../static/images/car2.png" style="width:20px;height:20px" catchtap="Addtocar" id="{{item.pro_id}}"/>
+            </view>
+          </view>
+        </view>
+      </view>
+      </block>
+  </view>
+</view>

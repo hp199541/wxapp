@@ -1,0 +1,39 @@
+.goodsinfo-price{
+  height: 35px;
+  padding: 15px 0 0 15px;
+  color: red;
+  font-size: 24px
+}
+.goodsinfo-title{
+  padding: 0 0 0 15px;
+  height: 35px;
+  border-bottom: 1px solid #ccc
+}
+.goodsinfo-detail{
+  padding: 10px 15px;
+}
+.goodsinfo-detail text{
+  display: block;
+  height: 35px;
+  border-bottom: 1px solid #ccc;
+  padding-left: 15px;
+  margin-bottom: 10px
+}
+.detailinfo{
+  color: #ccc
+}
+.popup-top{
+  display: flex;
+  align-content: center;
+  height: 100px;
+  border-bottom: 1px solid #ccc
+}
+.popup-price{
+  margin: 20px 115px;
+  color: orange
+}
+.popup-bottom{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px
+}
